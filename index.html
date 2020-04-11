@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JSON throwback</title>
+</head>
+<body>
+
+<div id="output"></div>
+
+
+<script>
+
+    var person = {
+      name: "maheeb",
+      Age : 26,
+      Children:['x','y'],
+      Address:{
+          street:370,
+          Area: 'Khilgaon'
+      }
+
+
+    };
+    // person = JSON.stringify(person);
+    // person = JSON.parse(person)
+    // console.log(person.Address.Area,person.Children[1])
+
+    var people=[
+        {
+            name:"maheeb",
+            Age:25
+        },
+
+        {
+            name:"Azmaeen",
+            Age:26
+        },
+        {
+            name:"maheebazmaeen",
+            Age:27
+        },
+
+    ]
+
+    var output ='';
+    for (let i=0; i<people.length;i++){
+
+        let temp = people[i].name;
+       output += '<li>'+temp+'</li>';
+
+    }
+
+    let test_1=document.getElementById('output');
+    test_1.innerHTML=output;
+
+
+
+
+</script>
+</body>
+</html>
