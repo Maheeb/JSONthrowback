@@ -1,0 +1,24 @@
+{
+  "people":[
+  {
+    "name":"maheeb",
+    "Age":25
+  },
+
+  {
+    "name":"Azmaeen",
+    "Age":26
+  },
+  {
+    "name":"maheebazmaeen",
+    "Age":27
+  },
+    {
+      "name":"MZ",
+      "Age":20
+
+
+    }
+
+]
+}

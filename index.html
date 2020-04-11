@@ -14,50 +14,67 @@
 
 <script>
 
-    var person = {
-      name: "maheeb",
-      Age : 26,
-      Children:['x','y'],
-      Address:{
-          street:370,
-          Area: 'Khilgaon'
-      }
+    // var person = {
+    //   name: "maheeb",
+    //   Age : 26,
+    //   Children:['x','y'],
+    //   Address:{
+    //       street:370,
+    //       Area: 'Khilgaon'
+    //   }
+    //
+    //
+    // // person = JSON.stringify(person);
+    // // person = JSON.parse(person)
+    // // console.log(person.Address.Area,person.Children[1])
+    //
+    // var people=[
+    //     {
+    //         name:"maheeb",
+    //         Age:25
+    //     },
+    //
+    //     {
+    //         name:"Azmaeen",
+    //         Age:26
+    //     },
+    //     {
+    //         name:"maheebazmaeen",
+    //         Age:27
+    //     },
+    //
+    // ]
+    //
+    // var output ='';
+    // for (let i=0; i<people.length;i++){
+    //
+    //     let temp = people[i].name;
+    //    output += '<li>'+temp+'</li>';
+    //
+    // }
+    //
+    // let test_1=document.getElementById('output');
+    // test_1.innerHTML=output;
 
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
 
+            var response = JSON.parse(xhttp.responseText);
+            var people = response.people;
+
+            var output ='';
+
+            for (let i=0; i<people.length;i++){
+
+                output += '<li>'+people[i].name+'</li>';
+
+            }
+            document.getElementById("output").innerHTML = output;
+        }
     };
-    // person = JSON.stringify(person);
-    // person = JSON.parse(person)
-    // console.log(person.Address.Area,person.Children[1])
-
-    var people=[
-        {
-            name:"maheeb",
-            Age:25
-        },
-
-        {
-            name:"Azmaeen",
-            Age:26
-        },
-        {
-            name:"maheebazmaeen",
-            Age:27
-        },
-
-    ]
-
-    var output ='';
-    for (let i=0; i<people.length;i++){
-
-        let temp = people[i].name;
-       output += '<li>'+temp+'</li>';
-
-    }
-
-    let test_1=document.getElementById('output');
-    test_1.innerHTML=output;
-
-
+    xhttp.open("GET", "people.json", true);
+    xhttp.send();
 
 
 </script>
